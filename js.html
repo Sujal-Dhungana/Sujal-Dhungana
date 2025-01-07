@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<style>
+    .time{
+        margin-top: 5px;
+        margin-right: 10px;
+        font-size: 20px;
+        float: right;
+        -webkit-text-fill-color: white;
+        
+    }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #ffffff;
+    }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #3b3b3b;
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: #8c8b8b;
+      color: rgb(61, 61, 61);
+    }
+    
+    .topnav a.active {
+      background-color: #fffcfc;
+      color: rgb(255, 255, 255);
+      -webkit-text-fill-color: black;
+    }
+    #header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgba(255,255,255,0);
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    animation: anihead 3.5s linear infinite;
+    height: 54px;
+    width: 100vw;
+   
+}
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+@keyframes anihead{
+    0%{
+        box-shadow: 0px 5px 156px #00d2c6;
+    }
+    50%{
+        box-shadow: 0px 5px 200px #00d2c6;
+    }
+    100%{
+        box-shadow: 0px 5px 156px #00d2c6;
+    }
+} 
+
+    </style>
+<body class="">
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href = "login.html">Login</a>
+      </div>
+       <span id="span" class="time"></span>
+   
+ </body>
+   <script>
+
+    function op(){
+        window.open("login.html")
+    }
+   var span = document.getElementById('span');
+
+  function time() {
+  var d = new Date();
+  var s = d.getSeconds();
+  var m = d.getMinutes();
+  var h = d.getHours();
+  span.textContent = 
+    ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+}
+
+setInterval(time, 1000);
+</script>
+</html>
